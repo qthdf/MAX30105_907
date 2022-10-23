@@ -155,31 +155,4 @@ namespace Microbit {
 		return myBeat;
 	}
 	//%
-	int16_t spo(uint8_t type)
-	{
-		uint8_t myspo;
-		for (int i = 0 ; i < 100 ; i++)
-		  {
-		    while (particleSensor->available() == false) //do we have new data?
-		      particleSensor->check(); //Check the sensor for new data
-
-		    redBuffer[i] = particleSensor->getRed();
-		    irBuffer[i] = particleSensor->getIR();
-		    particleSensor->nextSample(); //We're finished with this sample so move to next sample
-
-		  }
-		
-		switch(type)
-			{
-				case 0:
-					myspo = 0;
-					break;
-
-				case 1:
-					myspo = 1;
-					break;
-
-			}
-		return myspo;
-	}
-}
+	
